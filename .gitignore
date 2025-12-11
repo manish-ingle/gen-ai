@@ -1,26 +1,32 @@
 # Dependencies
-# Ignore node_modules in child projects, but keep root level
+# Ignore node_modules in ALL child projects (monorepo structure - use root level only)
 */node_modules/
-chat-bot/**/node_modules/
-# Allow root level node_modules (uncomment to ignore root level too)
-# node_modules/
+**/node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-# Ignore package-lock.json in child projects, but keep root level
+# Ignore package-lock.json in ALL child projects (use root level only)
 */package-lock.json
-chat-bot/**/package-lock.json
-# Allow root level package-lock.json (uncomment to ignore root level too)
-# package-lock.json
+**/package-lock.json
+# Ignore package.json in child projects (use root level only - root package.json is NOT ignored)
+*/package.json
 yarn.lock
 pnpm-lock.yaml
 
 # Environment variables
-.env
-.env.local
-.env.*.local
-.env.production
-.env.development
+# Ignore .env files in ALL child projects (use root level .env only)
+*/.env
+*/.env.local
+*/.env.*.local
+*/.env.production
+*/.env.development
+**/.env
+**/.env.local
+**/.env.*.local
+**/.env.production
+**/.env.development
+# Allow root level .env.example (template file)
+!.env.example
 
 # Build outputs
 dist/
