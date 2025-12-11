@@ -1,15 +1,17 @@
 # Dependencies
 # Ignore node_modules in child projects, but keep root level
 */node_modules/
-**/node_modules/
 chat-bot/**/node_modules/
+# Allow root level node_modules (uncomment to ignore root level too)
+# node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 # Ignore package-lock.json in child projects, but keep root level
 */package-lock.json
-**/package-lock.json
 chat-bot/**/package-lock.json
+# Allow root level package-lock.json (uncomment to ignore root level too)
+# package-lock.json
 yarn.lock
 pnpm-lock.yaml
 
