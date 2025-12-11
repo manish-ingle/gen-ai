@@ -6,6 +6,7 @@
   "private": true,
   "author": "",
   "license": "UNLICENSED",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "chat-bot:backend:build": "cd chat-bot/backend && nest build",
@@ -19,7 +20,11 @@
     "chat-bot:backend:test:watch": "cd chat-bot/backend && jest --watch",
     "chat-bot:backend:test:cov": "cd chat-bot/backend && jest --coverage",
     "chat-bot:backend:test:debug": "cd chat-bot/backend && node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "chat-bot:backend:test:e2e": "cd chat-bot/backend && jest --config ./test/jest-e2e.json"
+    "chat-bot:backend:test:e2e": "cd chat-bot/backend && jest --config ./test/jest-e2e.json",
+    "chat-bot:frontend:dev": "cd chat-bot/frontend && vite",
+    "chat-bot:frontend:build": "cd chat-bot/frontend && tsc -b && vite build",
+    "chat-bot:frontend:lint": "cd chat-bot/frontend && eslint .",
+    "chat-bot:frontend:preview": "cd chat-bot/frontend && vite preview"
   },
   "dependencies": {
     "@nestjs/cli": "^11.0.14",
@@ -27,22 +32,29 @@
     "@nestjs/core": "^11.0.1",
     "@nestjs/platform-express": "^11.0.1",
     "ai": "^5.0.106",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
-    "@eslint/js": "^9.18.0",
+    "@eslint/js": "^9.39.1",
     "@nestjs/schematics": "^11.0.0",
     "@nestjs/testing": "^11.0.1",
     "@types/express": "^5.0.0",
     "@types/jest": "^30.0.0",
-    "@types/node": "^22.10.7",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
     "@types/supertest": "^6.0.2",
-    "eslint": "^9.18.0",
+    "@vitejs/plugin-react": "^5.1.1",
+    "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-prettier": "^5.2.2",
-    "globals": "^16.0.0",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
     "jest": "^30.0.0",
     "prettier": "^3.4.2",
     "source-map-support": "^0.5.21",
@@ -51,8 +63,9 @@
     "ts-loader": "^9.5.2",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.7.3",
-    "typescript-eslint": "^8.20.0"
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vite": "^7.2.4"
   },
   "jest": {
     "moduleFileExtensions": [
